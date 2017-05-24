@@ -25,7 +25,7 @@ today = datetime.date(now.year, now.month, now.day)
 
 # This is an extra change to test github
 
-
+# Define different colors for use.
 red = QtGui.QBrush(QtGui.QColor(255, 0, 0))
 red.setStyle(QtCore.Qt.NoBrush)
 yellow = QtGui.QBrush(QtGui.QColor(200, 200, 0))
