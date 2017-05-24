@@ -23,7 +23,9 @@ months = ['None', 'January', 'February', 'March', 'April', 'May', 'June',
 now = datetime.datetime.now()
 today = datetime.date(now.year, now.month, now.day)
 
-# Define colors for use.
+# This is an extra change to test github
+
+
 red = QtGui.QBrush(QtGui.QColor(255, 0, 0))
 red.setStyle(QtCore.Qt.NoBrush)
 yellow = QtGui.QBrush(QtGui.QColor(200, 200, 0))
