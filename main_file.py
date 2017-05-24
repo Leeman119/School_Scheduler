@@ -23,7 +23,7 @@ months = ['None', 'January', 'February', 'March', 'April', 'May', 'June',
 now = datetime.datetime.now()
 today = datetime.date(now.year, now.month, now.day)
 
-# This is an extra change to test GitHub
+# This is an extra change to test GitHub. Test number 4.
 
 # Define different colors for use.
 red = QtGui.QBrush(QtGui.QColor(255, 0, 0))
