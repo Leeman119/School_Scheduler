@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<root>
+	<publishers>
+		<publisher frequency="1.0" name="Alexandria Lal">
+			<last_as_household date="April 17 2017" prev_date="March 20 2017"/>
+			<next_council point="5"/>
+		</publisher>
+		<publisher frequency="1.0" name="Ashlee Anker">
+			<last_as_household date="March 13 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="0" date="April 10 2017" part="First Visit"/>
+			<talk council="0" date="May 22 2017" part="First Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Brenda Bañuelos">
+			<last_as_household date="May 22 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="50" date="March 27 2017" part="Return Visit"/>
+			<talk council="0" date="May 15 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Janay Mosley">
+			<last_as_household date="April 24 2017" prev_date="March 20 2017"/>
+			<next_council point="2"/>
+			<talk council="0" date="May 8 2017" part="First Visit"/>
+		</publisher>
+		<publisher frequency="3.0" name="Kevin Cardoso">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="48" date="May 29 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Darren Chappell">
+			<last_as_household date="March 27 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="12" date="March 6 2017" part="Reading"/>
+			<talk council="35" date="March 13 2017" part="Bible Study"/>
+			<talk council="0" date="April 3 2017" part="Reading"/>
+			<talk council="0" date="April 24 2017" part="Bible Study"/>
+			<talk council="0" date="May 1 2017" part="Reading"/>
+			<talk council="0" date="May 15 2017" part="Bible Study"/>
+		</publisher>
+		<publisher frequency="1.0" name="Jonathan Lal">
+			<last_as_household date="March 13 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="3" date="March 20 2017" part="Reading"/>
+			<talk council="0" date="April 17 2017" part="First Visit"/>
+			<talk council="0" date="April 24 2017" part="Reading"/>
+			<talk council="0" date="May 15 2017" part="Reading"/>
+		</publisher>
+		<publisher frequency="1.0" name="Evelia Estrada">
+			<last_as_household date="April 10 2017" prev_date="March 13 2017"/>
+			<next_council point="0"/>
+		</publisher>
+		<publisher frequency="3.0" name="Mark Estrada">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="9" date="June 12 2017" part="Reading"/>
+		</publisher>
+		<publisher frequency="1.0" name="Eddie Esquivel">
+			<last_as_household date="April 17 2017" prev_date=""/>
+			<next_council point="22"/>
+			<talk council="0" date="April 10 2017" part="Reading"/>
+			<talk council="0" date="May 8 2017" part="Bible Study"/>
+			<talk council="9" date="June 19 2017" part="Reading"/>
+		</publisher>
+		<publisher frequency="1.0" name="Leslie Esquivel">
+			<last_as_household date="June 19 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="18" date="June 12 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="3.0" name="Kevin Gilliam">
+			<last_as_household date="May 29 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="14" date="March 27 2017" part="First Visit"/>
+			<talk council="6" date="June 5 2017" part="Reading"/>
+		</publisher>
+		<publisher frequency="1.0" name="Javonni Gilliam">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="38" date="June 19 2017" part="First Visit"/>
+		</publisher>
+		<publisher frequency="2.0" name="Andre Graves">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="3" date="May 29 2017" part="Reading"/>
+		</publisher>
+		<publisher frequency="1.0" name="Vanessa Graves">
+			<last_as_household date="June 12 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="23" date="June 19 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Vivien Grays">
+			<last_as_household date="June 26 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="41" date="March 13 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Jessica Garcia">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="50" date="June 26 2017" part="Bible Study"/>
+		</publisher>
+		<publisher frequency="1.0" name="Melanie Heck">
+			<last_as_household date="April 24 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="0" date="May 15 2017" part="First Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Jared Heck">
+			<last_as_household date="May 15 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="8" date="March 27 2017" part="Reading"/>
+			<talk council="0" date="April 17 2017" part="Reading"/>
+			<talk council="13" date="June 12 2017" part="First Visit"/>
+		</publisher>
+		<publisher frequency="3.0" name="James Heck Sr.">
+			<last_as_household date="May 29 2017" prev_date="May 15 2017"/>
+			<next_council point="0"/>
+			<talk council="0" date="May 22 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Heylicken Hueck">
+			<last_as_household date="March 27 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="0" date="April 17 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="3.0" name="Marlon Hurtado">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="0" date="April 10 2017" part="Return Visit"/>
+			<talk council="39" date="May 29 2017" part="First Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Paola Hurtado">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="19" date="March 13 2017" part="First Visit"/>
+			<talk council="0" date="May 22 2017" part="Bible Study"/>
+		</publisher>
+		<publisher frequency="1.0" name="Anali Jiminez">
+			<last_as_household date="April 17 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="38" date="June 26 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Janel Joubert">
+			<last_as_household date="June 26 2017" prev_date=""/>
+			<next_council point="10"/>
+			<talk council="50" date="May 8 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Iveth Machado">
+			<last_as_household date="May 22 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="0" date="April 24 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Renita Okron">
+			<last_as_household date="June 19 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="0" date="April 24 2017" part="First Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Donnarcia Scurry">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+		</publisher>
+		<publisher frequency="1.0" name="Ashley Sentman">
+			<last_as_household date="June 19 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="12" date="March 20 2017" part="Return Visit"/>
+		</publisher>
+		<publisher frequency="1.0" name="Emerald Sentman">
+			<last_as_household date="May 8 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="32" date="March 20 2017" part="Bible Study"/>
+		</publisher>
+		<publisher frequency="1.0" name="Pequita Smalls">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="50" date="June 19 2017" part="Bible Study"/>
+		</publisher>
+		<publisher frequency="1.0" name="Aloma Somarriba">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="3" date="June 26 2017" part="First Visit"/>
+		</publisher>
+		<publisher frequency="3.0" name="Leandro Teles">
+			<last_as_household date="June 12 2017" prev_date="May 22 2017"/>
+			<next_council point="0"/>
+			<talk council="4" date="May 29 2017" part="Bible Study"/>
+		</publisher>
+		<publisher frequency="1.0" name="Melissa Teles">
+			<last_as_household date="June 26 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="0" date="April 17 2017" part="Bible Study"/>
+		</publisher>
+		<publisher frequency="3.0" name="Matthew Wiley">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="49" date="March 27 2017" part="Bible Study"/>
+			<talk council="0" date="April 10 2017" part="Bible Study"/>
+			<talk council="52" date="June 12 2017" part="Bible Study"/>
+		</publisher>
+		<publisher frequency="1.0" name="Hamilton Maldonado">
+			<last_as_household date="April 10 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="11" date="March 13 2017" part="Reading"/>
+			<talk council="0" date="May 22 2017" part="Reading"/>
+		</publisher>
+		<publisher frequency="1.0" name="Bridgette Maldonado">
+			<last_as_household date="May 8 2017" prev_date="March 20 2017"/>
+			<next_council point="0"/>
+		</publisher>
+		<publisher frequency="1.0" name="Tiege Dolly">
+			<last_as_household date="" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="0" date="May 8 2017" part="Reading"/>
+			<talk council="26" date="July 17 2017" part="Bible Study"/>
+			<talk council="14" date="June 26 2017" part="Reading"/>
+		</publisher>
+		<publisher frequency="1.0" name="Giuliana Romero">
+			<last_as_household date="May 15 2017" prev_date=""/>
+			<next_council point="0"/>
+			<talk council="38" date="March 20 2017" part="First Visit"/>
+		</publisher>
+	</publishers>
+</root>
