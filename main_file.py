@@ -16,6 +16,10 @@ schedule_filename = 'save_file\schedule.xml'
 
 turn_yellow_after_days = 60
 turn_red_after_days = 90
+# How many days before Monday should the week schedule displayed change to the following week.
+# For example, for a Tuesday meeting, you want to see the schedule for the week of May 15 only until Tuesday the 16th.
+# On Wednesday the 17th you're ready to display the schedule for the following week: Monday, May 22. Offset would be 5.
+offset = 3
 
 
 months = ['None', 'January', 'February', 'March', 'April', 'May', 'June',
@@ -221,6 +225,7 @@ class FileManagement(object):
                 self.sched_save()
                 break
 
+
 class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
     def __init__(self):
         super(SchedulerMain, self).__init__()
@@ -230,7 +235,7 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
         # (By last time talk was given or last time as householder)
         self.current_sorting = 'talk'  # Or last_as_household
 
-        # Populate the year_box, and set current to the current year.
+        # Populate the year_box with all years in the xml database.
         for y in data.years:
             self.year_box.addItem(y.get('year'))
 
@@ -240,7 +245,7 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
         for i, w in enumerate(data.current_weeks, 0):
             week = w.get('week').split()
             month = int(months.index(week[0]))
-            day = int(week[1]) + 3
+            day = int(week[1]) + offset
             if month >= now.month and day >= now.day:
                 self.schedule_listbox.setCurrentRow(i)
                 self.populate_student_parts()
@@ -301,7 +306,7 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
         self.schedule_listbox.clear()
         for index, week in enumerate(data.current_weeks, 0):
             self.schedule_listbox.addItem(week.get('week'))
-            # Color weeks with unassigned parts red.
+            # Determine if the week has been completely assigned.
             if \
                week.find('reading').get('publisher') != '' and \
                week.find('first_visit').get('publisher') != '' and \
@@ -310,10 +315,13 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
                week.find('return_visit_help').get('publisher') != '' and \
                week.find('bible_study').get('publisher') != '' and \
                week.find('bible_study_help').get('publisher') != '':
+                # Color weeks that have been assigned AND slips have been printed, black.
                 if week.get('printed') == 'True':
                     self.schedule_listbox.item(index).setForeground(black)
+                # Otherwise, the week has been scheduled, but no slips have been printed. Color yellow.
                 else:
                     self.schedule_listbox.item(index).setForeground(yellow)
+            # If any assignment for the week is missing, color it red.
             else:
                 self.schedule_listbox.item(index).setForeground(red)
         if selected != -1:
@@ -397,7 +405,7 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
                 sortable = hist.get('date').split()
                 sortable = datetime.date(int(sortable[2]), months.index(sortable[0]), int(sortable[1]))
                 add_comma_to_date = hist.get('date').split()
-                add_comma_to_date = '{} {}, {}'.format(add_comma_to_date[0], add_comma_to_date[1], add_comma_to_date[2])
+                add_comma_to_date = f'{add_comma_to_date[0]} {add_comma_to_date[1]}, {add_comma_to_date[2]}'
                 history.append((add_comma_to_date, hist.get('part'), hist.get('council'), sortable))
             history.sort(key=lambda tup: tup[3], reverse=True)
 
@@ -405,7 +413,7 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
             last_t = [900, '', '', '0']  # [days_since_last, date, part, council]
             next_t = [-900, '', '', '']
             for h in history:
-                self.pub_hist_listbox.addItem('{} - {} ({})'.format(h[0], h[1], h[2]))
+                self.pub_hist_listbox.addItem(f'{h[0]} - {h[1]} ({h[2]})')
                 days = (today - h[3]).days
                 if days > 0 and days < last_t[0]:
                     last_t[0] = days
