@@ -118,6 +118,7 @@
 			<last_as_household date="March 27 2017" prev_date=""/>
 			<next_council point="0"/>
 			<talk council="0" date="April 17 2017" part="Return Visit"/>
+			<talk council="0" date="July 31 2017" part="Reading"/>
 		</publisher>
 		<publisher frequency="3.0" name="Marlon Hurtado">
 			<last_as_household date="" prev_date=""/>

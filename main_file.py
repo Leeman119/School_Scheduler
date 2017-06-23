@@ -5,14 +5,20 @@ from xml.etree.ElementTree import Element, ElementTree
 import xml.dom.minidom
 import sys
 import datetime
+import atexit
+import os
 
 global data
 global app
 global MainWin
 global EditList
 
-pub_filename = 'save_file\publishers.xml'
-schedule_filename = 'save_file\schedule.xml'
+now = datetime.datetime.now()
+today = datetime.date(now.year, now.month, now.day)
+
+pub_filename = 'save_file\\publishers.xml'
+schedule_filename = 'save_file\\schedule.xml'
+backup_path = 'backup\\'
 
 turn_yellow_after_days = 60
 turn_red_after_days = 90
@@ -24,8 +30,6 @@ offset = 3
 
 months = ['None', 'January', 'February', 'March', 'April', 'May', 'June',
           'July', 'August', 'September', 'October', 'November', 'December']
-now = datetime.datetime.now()
-today = datetime.date(now.year, now.month, now.day)
 
 # Define different colors for use.
 red = QtGui.QBrush(QtGui.QColor(255, 0, 0))
@@ -42,8 +46,8 @@ black.setStyle(QtCore.Qt.NoBrush)
 
 class FileManagement(object):
     def __init__(self):
-        self.schedule = object
-        self.years = object
+        self.schedule = ET.parse(schedule_filename)
+        self.years = self.schedule.findall('year')
         self.current_weeks = object
         self.current_year = str(now.year)
         self.sched_load()
@@ -57,8 +61,8 @@ class FileManagement(object):
         self.years = self.schedule.findall('year')
         self.current_weeks_update()
 
-    def sched_save(self):
-        self.schedule.write(schedule_filename)
+    def sched_save(self, path=schedule_filename):
+        self.schedule.write(path)
         self.sched_load()
 
     def talk_save(self, year, week, tag, publisher, council=0):
@@ -84,11 +88,11 @@ class FileManagement(object):
             if year.get('year') == self.current_year:
                 self.current_weeks = year.findall('week')
 
-    def pub_save(self):
+    def pub_save(self, path=pub_filename):
         ugly_xml = ET.tostring(self.root)
         fixing = xml.dom.minidom.parseString(ugly_xml)
         pretty_xml = fixing.toprettyxml()
-        with open(pub_filename, 'w') as file:
+        with open(path, 'w') as file:
             file.write(pretty_xml)
 
     def pub_load(self):
@@ -224,6 +228,16 @@ class FileManagement(object):
                 w.set('printed', status)
                 self.sched_save()
                 break
+
+    def backup(self):
+        backup = '{}{})'.format(backup_path, str(now)[:-7])
+        backup = backup.replace(' ', '(').replace(':', '_')
+        os.makedirs(backup)
+        pub_backup = backup + '\\publishers.xml'
+        schedule_backup = backup + '\\schedule.xml'
+
+        self.pub_save(pub_backup)
+        self.sched_save(schedule_backup)
 
 
 class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
@@ -405,7 +419,7 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
                 sortable = hist.get('date').split()
                 sortable = datetime.date(int(sortable[2]), months.index(sortable[0]), int(sortable[1]))
                 add_comma_to_date = hist.get('date').split()
-                add_comma_to_date = f'{add_comma_to_date[0]} {add_comma_to_date[1]}, {add_comma_to_date[2]}'
+                add_comma_to_date = '{} {}, {}'.format(add_comma_to_date[0], add_comma_to_date[1], add_comma_to_date[2])
                 history.append((add_comma_to_date, hist.get('part'), hist.get('council'), sortable))
             history.sort(key=lambda tup: tup[3], reverse=True)
 
@@ -413,7 +427,7 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
             last_t = [900, '', '', '0']  # [days_since_last, date, part, council]
             next_t = [-900, '', '', '']
             for h in history:
-                self.pub_hist_listbox.addItem(f'{h[0]} - {h[1]} ({h[2]})')
+                self.pub_hist_listbox.addItem('{} - {} ({})'.format(h[0], h[1], h[2]))
                 days = (today - h[3]).days
                 if days > 0 and days < last_t[0]:
                     last_t[0] = days
@@ -588,6 +602,7 @@ def run():
     EditList = ListEditor()
     MainWin.show()
 
+    atexit.register(data.backup)
     sys.exit(app.exec_())
 
 
