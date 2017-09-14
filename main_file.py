@@ -375,6 +375,15 @@ class SchedulerMain(QtWidgets.QMainWindow, scheduler.Ui_MainWindow):
         temp_list = []
         for p in data.publishers:
             temp_list.append((p.get('name'), data.days_since(p.findall(self.current_sorting), p.get('frequency'))))
+            # Test print data.
+            print("------" + p.get('name') + "------")
+            print("  Next Council Point = " + p.find('next_council').get('point'))
+            print("  Last time as householder = " + p.find('last_as_household').get('date'))
+            print("  Talk History:")
+            for t in p.findall('talk'):
+                print("    " + t.get('part') + ":\n      Date = " + t.get('date') + "; Council = " + t.get('council'))
+            print("")
+
 
         temp_list.sort(key=lambda tup: tup[1], reverse=True)
         for pub in temp_list:
